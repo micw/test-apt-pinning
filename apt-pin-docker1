@@ -1,0 +1,8 @@
+Package: docker-ce
+Pin: version 18.06.*
+Pin-Priority: 500
+
+Package: docker-ce
+Pin: version *
+Pin-Priority: -1
+
