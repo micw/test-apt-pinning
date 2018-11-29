@@ -1,6 +1,9 @@
 FROM debian:9
 
-RUN apt-get update && \
+ADD apt-pin-unstable /etc/apt/preferences.d/limit-unstable
+
+RUN echo "deb http://deb.debian.org/debian/ unstable main" >> /etc/apt/sources.list && \
+    apt-get update && \
     apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common && \
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
